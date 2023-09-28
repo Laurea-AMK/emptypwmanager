@@ -6,14 +6,17 @@ from main import is_strong_password, generate_password, add_password, get_passwo
 class TestPasswordManager(unittest.TestCase):
 
     def setUp(self):
-        # Create a temporary passwords.json file for testing
-        self.test_passwords_file = "test_passwords.json"
-        self.test_passwords = {"example.com": {"username": "user123", "password": "P@ssw0rd"}}
+        # Create a temporary vault.txt file for testing
+        self.test_passwords_file = "test_vault.txt"
+        self.test_passwords = [
+            {"website": "example.com", "username": "user123", "password": "P@ssw0rd"},
+            {"website": "test.com", "username": "testuser", "password": "TestP@ss123"}
+        ]
         with open(self.test_passwords_file, "w") as f:
             json.dump(self.test_passwords, f)
 
     def tearDown(self):
-        # Remove the temporary passwords.json file after testing
+        # Remove the temporary vault.txt file after testing
         os.remove(self.test_passwords_file)
 
     def test_is_strong_password(self):
@@ -53,16 +56,15 @@ class TestPasswordManager(unittest.TestCase):
         password = "StrongP@ssw0rd"
         add_password(website, username, password)
 
-        # Check if the added password is in the dictionary
-        self.assertEqual(passwords[website]["username"], username)
-        self.assertTrue(is_strong_password(passwords[website]["password"]))
+        # Check if the added password is in the lists
+        self.assertIn({"website": website, "username": username, "password": password}, self.test_passwords)
 
     def test_get_password(self):
         # Test retrieving an existing password
         website = "example.com"
         username, password = get_password(website)
-        self.assertEqual(username, self.test_passwords[website]["username"])
-        self.assertEqual(password, self.test_passwords[website]["password"])
+        self.assertEqual(username, "user123")
+        self.assertEqual(password, "P@ssw0rd")
 
         # Test retrieving a non-existent password
         website = "nonexistent.com"
@@ -85,9 +87,9 @@ class TestPasswordManager(unittest.TestCase):
         self.assertEqual(loaded_passwords, self.test_passwords)
 
         # Test loading passwords from a non-existent file
-        nonexistent_file = "nonexistent.json"
+        nonexistent_file = "nonexistent.txt"
         loaded_passwords = load_passwords(nonexistent_file)
-        self.assertEqual(loaded_passwords, {})
+        self.assertEqual(loaded_passwords, [])
 
 if __name__ == '__main__':
     unittest.main()
