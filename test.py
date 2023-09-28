@@ -1,7 +1,7 @@
 import unittest
 import json
 import os
-from your_password_manager_module import is_strong_password, generate_password, add_password, get_password, save_passwords, load_passwords
+from main import is_strong_password, generate_password, add_password, get_password, save_passwords, load_passwords
 
 class TestPasswordManager(unittest.TestCase):
 
