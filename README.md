@@ -6,7 +6,7 @@ Through this assigment,  you will learn to write and test a tiny software progra
 
 ## Background 
 
-Develop a Python-based password manager that allows users tostore and retrieve website login credentials. Additionally, implement a password strength checker to encourage users to create strong passwords.  If you time and motivation for more, also add a password generator feature that allows users to generate strong and random passwords when adding new entries to the password manager.  You are provided with a coding templete, which as ready-make functions for Ceaser cipher excryption and decryption.  Please note that the Caesar cipher encryption is only for educational purposes. Real-world password managers use strong encryption algorithms and secure storage methods.
+Develop a Python-based password manager that allows users to store and retrieve website login credentials. Additionally, implement a password strength checker to encourage users to create strong passwords.  If you time and motivation for more, also add a password generator feature that allows users to generate strong and random passwords when adding new entries to the password manager.  You are provided with a coding templete, which as ready-make functions for Ceaser cipher excryption and decryption.  Please note that the Caesar cipher encryption is only for educational purposes. Real-world password managers use strong encryption algorithms and secure storage methods.
 
 ## Prepatory actions
 
