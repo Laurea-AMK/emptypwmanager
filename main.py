@@ -49,7 +49,7 @@ def add_password():
     """
     Add a new password to the password manager.
 
-    This function should prompt the user for the website, username,  and password and store them to lits with same index. Optionally, it should check password strengh with the function is_strong_password. It may also include an option for the user to
+    This function should prompt the user for the website, username,  and password and store them to lists. Optionally, it should check password strengh with the function is_strong_password. It may also include an option for the user to
     generate a random strong password by calling the generate_password function.
 
     Returns:
@@ -68,13 +68,12 @@ def get_password():
         None
     """
 
-# Function to save passwords to a JSON file 
+# Function to save passwords to a text file 
 def save_passwords():
  """
     Save the password vault to a file.
 
-    This function should save passwords, websites, and usernames to a text
-    file named "vault.txt" in a structured format.
+    This function should save passwords, websites, and usernames to a text file named "vault.txt" in a structured format.  The text file needs to be created if it does not exist.
 
     Returns:
         None
@@ -90,7 +89,7 @@ def load_passwords():
     Load passwords from a file into the password vault.
 
     This function should load passwords, websites, and usernames from a text
-    file named "vault.txt" (or a more generic name) and populate the respective lists.
+    file named "vault.txt" and populate the respective lists.
 
     Returns:
         None
