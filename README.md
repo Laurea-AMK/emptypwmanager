@@ -16,8 +16,8 @@ Develop a Python-based password manager that allows users to store and retrieve 
 
 ## Workflow actions
 
-1.  Implement a simple password manager on top of the ready template (at main.py). Do NOT change names of functions, nor the provided user interface.
-2.  Implement the following functions: adding password, retrieving password, loading passwords from file and saving passwords to file. Optionally, add a password strength checker and random password generator.7
+1.  Implement a simple password manager on top of the ready template (at main.py). Do not change names of functions, nor the provided user interface.
+2.  Implement the following functions: adding password, retrieving password, loading passwords from file and saving passwords to file. Optionally, add a password strength checker and random password generator.
 3.  Follow instructions in the coding template on how to implement the functions. If you need to divert from the instructions, explain clearly in commends why you have done so.
 4.	Please use the provided functions to encrypt and decrypt the password instead of writing them to file with plain text (while noting this encryption methos is only good for educational purposes).
 5.  Test your password manager either manually or by using a ready-made code for automated unit tests (at test.py).  If you want to improve unit tests, please add your own file (e.g. mytest.py) for the purpose.
